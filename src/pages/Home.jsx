@@ -1,7 +1,8 @@
 import { Card } from "../components/Card/Card";
 import { Header } from "../components/Header";
 import { cardArray } from "../constants";
-
+import { contentArrey } from "../constants";
+import { Content } from "../components/Content/Content";
 export const Home = () => {
   return (
     <>
@@ -45,42 +46,14 @@ export const Home = () => {
                 <div className="content-side_box">
                   <div className="content-side_list">
                     <div className="content-side_list-item">
-                      <img
-                        className="content-side_list-img"
-                        src="./icon/gruz.svg"
-                        alt="gruz"
-                      />
-                      <h5 className="content-side_list-title">Доставка</h5>
-                      <p className="content-side_list-text">
-                        Проверка при получении и возможность бесплатно вернуть
-                        товар
-                      </p>
-                    </div>
-                    <div className="content-side_list-item">
-                      <img
-                        className="content-side_list-img"
-                        src="./icon/avto.png"
-                        alt="avto"
-                      />
-                      <h5 className="content-side_list-title">Автотека</h5>
-                      <p className="content-side_list-text">
-                        Отчёт с историей авто: пробег, владельцы, сведения о
-                        залоге, ДТП и ремонтах
-                      </p>
-                    </div>
-                    <div className="content-side_list-item">
-                      <img
-                        className="content-side_list-img"
-                        src="./icon/love1.svg"
-                        alt="love1"
-                      />
-                      <h5 className="content-side_list-title">
-                        Онлайн-бронирование жилья
-                      </h5>
-                      <p className="content-side_list-text">
-                        Посуточная аренда квартир и домов: большой выбор
-                        вариантов для поездок по России
-                      </p>
+                      {contentArrey.map((content) => (
+                        <Content
+                          key={content.id}
+                          title={content.title}
+                          descr={content.descr}
+                          img={content.img}
+                        />
+                      ))}
                     </div>
                   </div>
                   <div className="content-side_footer">
